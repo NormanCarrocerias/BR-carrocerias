@@ -1,135 +1,508 @@
 <!DOCTYPE html>
-<html lang="es">
+<html lang="es-MX">
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>BR Carrocerías </title>
-<!-- Fuente Montserrat desde Google Fonts -->
-  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&display=swap" rel="stylesheet">
-  <!-- Font Awesome para íconos -->
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+  <title>BR Carrocerías | Fabricación de carrocerías para camiones en Nepantla, Edo. Méx.</title>
+  <meta name="description" content="Fabricación y reparación de carrocerías para camiones y remolques: volteos, redilas, cajas secas, pipas y plataformas. Carretera México-Cuautla km 79, Nepantla. Cotiza por WhatsApp.">
+  <meta name="theme-color" content="#14161a">
 
-  <!-- Tu hoja de estilos -->
-  <link rel="stylesheet" href="styles.css">
+  <!-- Al compartir el enlace en WhatsApp/Facebook se verá esta tarjeta -->
+  <meta property="og:type" content="website">
+  <meta property="og:title" content="BR Carrocerías | Tu unidad de trabajo en manos expertas">
+  <meta property="og:description" content="Volteos, redilas, cajas secas, pipas y remolques a tu medida. Cotiza por WhatsApp.">
+  <meta property="og:url" content="https://normancarrocerias.github.io/BR-carrocerias/">
+  <meta property="og:image" content="https://normancarrocerias.github.io/BR-carrocerias/imagenes/WhatsApp%20Image%202026-07-08%20at%209.27.52%20AM%20%282%29.jpeg">
+  <meta property="og:locale" content="es_MX">
+
+  <!-- Datos estructurados: ayudan a Google a entender que es un taller local -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "AutoBodyShop",
+    "name": "BR Carrocerías",
+    "description": "Fabricación y reparación de carrocerías para camiones y remolques: volteos, redilas, cajas secas, pipas y plataformas.",
+    "url": "https://normancarrocerias.github.io/BR-carrocerias/",
+    "image": "https://normancarrocerias.github.io/BR-carrocerias/imagenes/logo.png",
+    "telephone": "+525649335426",
+    "email": "brcarrocerias@gmail.com",
+    "address": {
+      "@type": "PostalAddress",
+      "streetAddress": "Carretera federal México-Cuautla km 79",
+      "addressLocality": "Nepantla de Sor Juana Inés",
+      "addressRegion": "Estado de México",
+      "addressCountry": "MX"
+    }
+  }
+  </script>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@600;700&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+
+  <style>
+    :root {
+      --ink: #14161a;
+      --steel: #1f2329;
+      --line: #2e343c;
+      --accent: #e8541e;
+      --accent-dark: #c8420f;
+      --paper: #f6f4f0;
+      --white: #ffffff;
+      --muted: #6b7280;
+      --wa: #25d366;
+      --radius: 14px;
+      --shadow: 0 10px 30px rgba(0,0,0,.12);
+    }
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    html { scroll-behavior: smooth; scroll-padding-top: 76px; }
+    body {
+      font-family: 'Inter', system-ui, -apple-system, 'Segoe UI', sans-serif;
+      color: var(--ink);
+      background: var(--paper);
+      line-height: 1.6;
+    }
+    img { max-width: 100%; display: block; }
+    a { color: inherit; }
+    h1, h2, h3 { font-family: 'Barlow Condensed', 'Arial Narrow', sans-serif; line-height: 1.1; letter-spacing: .01em; }
+    .container { width: min(1120px, 100% - 32px); margin-inline: auto; }
+    section { padding: 72px 0; }
+    .eyebrow { color: var(--accent); font-weight: 600; font-size: .85rem; letter-spacing: .14em; text-transform: uppercase; margin-bottom: 8px; }
+    .section-title { font-size: clamp(2rem, 4vw, 2.8rem); margin-bottom: 12px; }
+    .section-intro { color: var(--muted); max-width: 620px; margin-bottom: 40px; }
+
+    /* Botones */
+    .btn {
+      display: inline-flex; align-items: center; justify-content: center; gap: 10px;
+      padding: 14px 24px; border-radius: 999px; border: 2px solid transparent;
+      font: 600 1rem 'Inter', sans-serif; text-decoration: none; cursor: pointer;
+      transition: transform .15s ease, background .15s ease, border-color .15s ease;
+    }
+    .btn:hover { transform: translateY(-2px); }
+    .btn:focus-visible, a:focus-visible, button:focus-visible, input:focus-visible, select:focus-visible, textarea:focus-visible {
+      outline: 3px solid var(--accent); outline-offset: 3px;
+    }
+    .btn-wa { background: var(--wa); color: #062b14; }
+    .btn-wa:hover { background: #1fbd5b; }
+    .btn-ghost { border-color: rgba(255,255,255,.55); color: var(--white); }
+    .btn-ghost:hover { border-color: var(--white); background: rgba(255,255,255,.08); }
+    .btn-accent { background: var(--accent); color: var(--white); }
+    .btn-accent:hover { background: var(--accent-dark); }
+    .btn svg { width: 20px; height: 20px; flex: none; }
+
+    /* Encabezado */
+    header {
+      position: sticky; top: 0; z-index: 50;
+      background: rgba(20,22,26,.94); backdrop-filter: blur(8px);
+      border-bottom: 1px solid var(--line);
+    }
+    .nav { display: flex; align-items: center; justify-content: space-between; height: 68px; }
+    .brand { display: flex; align-items: center; gap: 12px; text-decoration: none; color: var(--white); }
+    .brand .logo-box { background: var(--white); border-radius: 10px; padding: 4px 8px; }
+    .brand img { height: 36px; width: auto; }
+    .brand span { font-family: 'Barlow Condensed', sans-serif; font-size: 1.4rem; font-weight: 700; }
+    .nav ul { display: flex; gap: 28px; list-style: none; align-items: center; }
+    .nav ul a { color: #d7dbe0; text-decoration: none; font-weight: 500; font-size: .95rem; }
+    .nav ul a:hover { color: var(--white); }
+    .nav .btn { padding: 9px 18px; font-size: .9rem; }
+    .menu-toggle { display: none; background: none; border: 0; color: var(--white); cursor: pointer; padding: 8px; }
+    .menu-toggle svg { width: 28px; height: 28px; }
+
+    /* Hero */
+    .hero {
+      position: relative; color: var(--white); padding: 110px 0 96px;
+      background:
+        linear-gradient(100deg, rgba(20,22,26,.94) 35%, rgba(20,22,26,.55)),
+        url('imagenes/WhatsApp%20Image%202026-07-08%20at%209.27.52%20AM%20%282%29.jpeg') center/cover no-repeat,
+        var(--ink);
+    }
+    .hero h1 { font-size: clamp(2.8rem, 7vw, 5rem); max-width: 720px; }
+    .hero h1 em { color: var(--accent); font-style: normal; }
+    .hero p { max-width: 540px; margin: 20px 0 32px; color: #d7dbe0; font-size: 1.1rem; }
+    .hero .actions { display: flex; flex-wrap: wrap; gap: 14px; }
+
+    .trust { background: var(--steel); color: #d7dbe0; padding: 18px 0; font-size: .95rem; }
+    .trust ul { display: flex; flex-wrap: wrap; gap: 12px 36px; list-style: none; justify-content: center; }
+    .trust li::before { content: "✔"; color: var(--accent); margin-right: 8px; }
+
+    /* Servicios */
+    .cards { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 24px; }
+    .card { background: var(--white); border-radius: var(--radius); overflow: hidden; box-shadow: var(--shadow); display: flex; flex-direction: column; }
+    .card .media { aspect-ratio: 4 / 3; background: var(--steel); overflow: hidden; display: grid; place-items: center; }
+    .card .media img { width: 100%; height: 100%; object-fit: cover; transition: transform .4s ease; }
+    .card:hover .media img { transform: scale(1.05); }
+    .card .media svg { width: 84px; height: 84px; color: var(--accent); }
+    .card .body { padding: 22px 24px 26px; }
+    .card h3 { font-size: 1.6rem; margin-bottom: 8px; }
+    .card p { color: var(--muted); }
+
+    /* Proceso */
+    .process { background: var(--ink); color: var(--white); }
+    .process .section-intro { color: #b5bcc6; }
+    .steps { display: grid; grid-template-columns: repeat(auto-fit, minmax(240px, 1fr)); gap: 24px; counter-reset: step; list-style: none; }
+    .steps li { counter-increment: step; background: var(--steel); border: 1px solid var(--line); border-radius: var(--radius); padding: 28px 24px; }
+    .steps li::before { content: counter(step); font: 700 2.6rem 'Barlow Condensed', sans-serif; color: var(--accent); display: block; line-height: 1; margin-bottom: 10px; }
+    .steps h3 { font-size: 1.4rem; margin-bottom: 6px; }
+    .steps p { color: #b5bcc6; font-size: .95rem; }
+    .process .cta { margin-top: 36px; }
+
+    /* Galería */
+    .gallery { display: grid; grid-template-columns: repeat(auto-fill, minmax(260px, 1fr)); gap: 16px; }
+    .gallery button { border: 0; padding: 0; background: var(--steel); border-radius: var(--radius); overflow: hidden; cursor: zoom-in; aspect-ratio: 4 / 3; }
+    .gallery img { width: 100%; height: 100%; object-fit: cover; transition: transform .4s ease, opacity .2s; }
+    .gallery button:hover img { transform: scale(1.06); opacity: .9; }
+    dialog.lightbox { border: 0; background: transparent; max-width: 96vw; max-height: 96vh; margin: auto; }
+    dialog.lightbox::backdrop { background: rgba(0,0,0,.85); }
+    dialog.lightbox img { max-height: 88vh; border-radius: 10px; }
+    dialog.lightbox form { text-align: right; }
+    dialog.lightbox .close { background: var(--white); border: 0; border-radius: 999px; padding: 8px 18px; font-weight: 600; cursor: pointer; margin-bottom: 10px; }
+
+    /* Testimonios */
+    .testimonials { background: var(--white); }
+    .quote { background: var(--paper); border-radius: var(--radius); padding: 28px; border-left: 5px solid var(--accent); }
+    .quote .stars { color: #f5a623; letter-spacing: 3px; margin-bottom: 10px; }
+    .quote p { font-size: 1.05rem; margin-bottom: 14px; }
+    .quote cite { font-style: normal; font-weight: 600; color: var(--muted); }
+
+    /* Contacto */
+    .contact-grid { display: grid; grid-template-columns: 1.1fr .9fr; gap: 32px; align-items: start; }
+    .form-box { background: var(--white); border-radius: var(--radius); padding: 28px; box-shadow: var(--shadow); }
+    .form-box h3 { font-size: 1.7rem; margin-bottom: 4px; }
+    .form-box .hint { color: var(--muted); font-size: .92rem; margin-bottom: 20px; }
+    label { display: block; font-weight: 600; font-size: .9rem; margin: 14px 0 6px; }
+    input, select, textarea {
+      width: 100%; padding: 12px 14px; border: 1.5px solid #d4d8de; border-radius: 10px;
+      font: 1rem 'Inter', sans-serif; background: var(--white); color: var(--ink);
+    }
+    textarea { min-height: 110px; resize: vertical; }
+    .form-box .btn { width: 100%; margin-top: 22px; }
+    .info { display: grid; gap: 16px; }
+    .info-item { background: var(--white); border-radius: var(--radius); padding: 20px 22px; box-shadow: var(--shadow); }
+    .info-item h3 { font-size: 1.2rem; color: var(--accent); margin-bottom: 4px; }
+    .info-item a { text-decoration: none; font-weight: 500; }
+    .info-item a:hover { text-decoration: underline; }
+    .map { margin-top: 32px; border-radius: var(--radius); overflow: hidden; box-shadow: var(--shadow); }
+    .map iframe { width: 100%; height: 360px; border: 0; display: block; }
+
+    /* Pie */
+    footer { background: var(--ink); color: #b5bcc6; padding: 40px 0 90px; text-align: center; font-size: .92rem; }
+    footer strong { color: var(--white); font-family: 'Barlow Condensed', sans-serif; font-size: 1.5rem; display: block; margin-bottom: 6px; }
+
+    /* Botón flotante de WhatsApp */
+    .wa-float {
+      position: fixed; right: 18px; bottom: 18px; z-index: 60;
+      width: 60px; height: 60px; border-radius: 50%; background: var(--wa); color: #fff;
+      display: grid; place-items: center; box-shadow: 0 8px 22px rgba(0,0,0,.3);
+      transition: transform .15s ease;
+    }
+    .wa-float:hover { transform: scale(1.08); }
+    .wa-float svg { width: 32px; height: 32px; }
+
+    /* Aparición al hacer scroll */
+    .reveal { opacity: 0; transform: translateY(24px); transition: opacity .6s ease, transform .6s ease; }
+    .reveal.visible { opacity: 1; transform: none; }
+    @media (prefers-reduced-motion: reduce) {
+      html { scroll-behavior: auto; }
+      .reveal { opacity: 1; transform: none; transition: none; }
+      .btn, .card .media img, .gallery img { transition: none; }
+    }
+
+    /* Móvil */
+    @media (max-width: 820px) {
+      section { padding: 56px 0; }
+      .menu-toggle { display: block; }
+      .nav ul {
+        display: none; position: absolute; top: 68px; left: 0; right: 0;
+        flex-direction: column; gap: 0; background: var(--ink); border-bottom: 1px solid var(--line); padding: 8px 16px 18px;
+      }
+      .nav ul.open { display: flex; }
+      .nav ul li { width: 100%; }
+      .nav ul a { display: block; padding: 14px 0; }
+      .nav .btn { width: 100%; margin-top: 8px; }
+      .hero { padding: 80px 0 70px; }
+      .contact-grid { grid-template-columns: 1fr; }
+    }
+  </style>
 </head>
 <body>
 
-  <!-- NAVBAR -->
-  <nav class="navbar">
-    <div class="nav-container">
-      <div class="logo">BR Carrocerías</div>
-      <ul class="nav-menu">
-        <li><a href="#servicios">Servicios</a></li>
-        <li><a href="#portafolio">Trabajos</a></li>
-        <li><a href="#testimonios">Testimonios</a></li>
-        <li><a href="#contacto">Contacto</a></li>
-      </ul>
-    </div>
-  </nav>
+<header>
+  <div class="container nav">
+    <a class="brand" href="#inicio" aria-label="BR Carrocerías, inicio">
+      <span class="logo-box"><img src="imagenes/logo.png" alt="Logo de BR Carrocerías"></span>
+      <span>BR Carrocerías</span>
+    </a>
+    <button class="menu-toggle" id="menuToggle" aria-label="Abrir menú" aria-expanded="false" aria-controls="menu">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="M4 7h16M4 12h16M4 17h16"/></svg>
+    </button>
+    <ul id="menu">
+      <li><a href="#servicios">Servicios</a></li>
+      <li><a href="#proceso">Cómo trabajamos</a></li>
+      <li><a href="#trabajos">Trabajos</a></li>
+      <li><a href="#testimonios">Testimonios</a></li>
+      <li><a href="#contacto">Contacto</a></li>
+      <li><a class="btn btn-wa wa-link" href="#">Cotizar por WhatsApp</a></li>
+    </ul>
+  </div>
+</header>
+
+<main id="inicio">
 
   <!-- HERO -->
-  <section class="hero">
-    <div class="hero-content">
-      <h1 class="typewriter"> BR Carrocerías </h1>
-      <p class="slogan">Tu auto en manos expertas</p>
-    </div>
-  </section>
-
-  <!-- SECCIÓN SERVICIOS -->
-  <section id="servicios" class="section">
-    <h2>Servicios</h2>
-    <div class="cards-container">
-      <div class="card">
-        <img src="imagenes/servicio1.jpeg" alt="Servicio 1">
-        <h3>Pintura Automotriz</h3>
-        <p>Acabados profesionales y duraderos.</p>
-      </div>
-      <div class="card">
-        <img src="imagenes/servicio2.jpeg" alt="Servicio 2">
-        <h3>Reparación de Carrocería</h3>
-        <p>Soluciones rápidas y efectivas.</p>
+  <div class="hero">
+    <div class="container">
+      <p class="eyebrow">Nepantla de Sor Juana Inés · Edo. Méx.</p>
+      <h1>Carrocerías <em>hechas a tu medida</em></h1>
+      <p>Fabricamos y reparamos carrocerías para camiones, camionetas y remolques: volteos, redilas, cajas secas, pipas y más. Manda tus medidas o una foto por WhatsApp y recibe tu cotización.</p>
+      <div class="actions">
+        <a class="btn btn-wa wa-link" href="#">
+          <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M20.5 3.5A11.9 11.9 0 0 0 12 0C5.4 0 .1 5.3.1 11.9c0 2.1.6 4.1 1.6 5.9L0 24l6.4-1.7a11.9 11.9 0 0 0 5.6 1.4c6.6 0 11.9-5.3 11.9-11.9 0-3.2-1.2-6.200-3.400-8.300zM12 21.700a9.900 9.900 0 0 1-5-1.400l-.4-.2-3.800 1 1-3.700-.2-.4a9.800 9.800 0 0 1-1.500-5.200C2.100 6.500 6.500 2.100 12 2.100c2.600 0 5.100 1 6.900 2.900a9.700 9.700 0 0 1 2.900 6.900c0 5.400-4.400 9.800-9.800 9.800zm5.400-7.300c-.3-.1-1.700-.8-2-.9-.3-.1-.5-.1-.7.100l-.9 1.100c-.2.200-.3.200-.6.100a8 8 0 0 1-4-3.500c-.3-.5.3-.5.900-1.600.1-.2.100-.4 0-.5l-.9-2.100c-.2-.5-.5-.5-.7-.5h-.6c-.2 0-.5.100-.8.400-.3.300-1 1-1 2.500s1.100 2.900 1.200 3.100c.1.200 2.100 3.200 5.100 4.500 1.900.8 2.600.9 3.500.7.600-.1 1.700-.7 2-1.400.2-.7.200-1.300.2-1.400-.1-.1-.3-.2-.6-.3z"/></svg>
+          Cotizar por WhatsApp
+        </a>
+        <a class="btn btn-ghost" href="tel:+525649335426">Llamar: 56 4933 5426</a>
       </div>
     </div>
-  </section>
+  </div>
 
-  <!-- SECCIÓN PORTAFOLIO -->
-  <section id="portafolio" class="section">
-    <h2>Trabajos Realizados</h2>
-    <div class="portfolio">
-      <img src="imagenes/WI1.jpeg" alt="Trabajo 1">
-      <img src="imagenes/WI2.jpeg" alt="Trabajo 2">
-      <img src="imagenes/WI3.jpeg" alt="Trabajo 3">
-       <img src="imagenes/WI4.jpeg" alt="Trabajo 4">
-       <img src="imagenes/WI5.jpeg" alt="Trabajo 5">
-       <img src="imagenes/WI6.jpeg" alt="Trabajo 6">
+  <div class="trust">
+    <div class="container">
+      <ul>
+        <li>Carretera México-Cuautla km 79</li>
+        <li>Fabricación a la medida de tu unidad</li>
+        <li>Cotización por WhatsApp</li>
+      </ul>
     </div>
-  </section>
+  </div>
 
-  <!-- SECCIÓN TESTIMONIOS -->
-  <section id="testimonios" class="section">
-    <h2>Testimonios</h2>
-    <div class="testimonio">
-      <p>"El servicio fue excelente, mi carro quedó como nuevo."</p>
-      <h4>- Juan Pérez</h4>
-    </div>
-    <div class="testimonio">
-      <p>"Muy profesionales y atentos, recomiendo totalmente sus carrocerías."</p>
-      <h4>- María López</h4>
-    </div>
-    <div class="testimonio">
-      <p>"La calidad del trabajo es impecable, volveré sin duda."</p>
-      <h4>- Carlos Ramírez</h4>
-    </div>
-  </section>
-
-  <!-- SECCIÓN CONTACTO -->
-  <section id="contacto" class="section">
-    <h2>Contáctanos</h2>
-    <form class="form" action="https://formspree.io/f/xykrgjzk" method="POST">
-      <input type="text" name="nombre" placeholder="Tu nombre" required>
-      <input type="email" name="email" placeholder="Tu correo" required>
-      <textarea name="mensaje" placeholder="Tu mensaje" required></textarea>
-      <div class="form-buttons">
-        <button type="submit">Enviar</button>
-        <button type="reset" class="reset">Limpiar</button>
+  <!-- SERVICIOS -->
+  <section id="servicios">
+    <div class="container">
+      <p class="eyebrow">Servicios</p>
+      <h2 class="section-title">Lo que hacemos</h2>
+      <p class="section-intro">Desde la fabricación completa de una carrocería hasta su reparación y pintura.</p>
+      <!-- Confirma que estos servicios coinciden con lo que ofreces; edita o borra los que no -->
+      <div class="cards">
+        <article class="card reveal">
+          <div class="media"><img src="imagenes/WhatsApp%20Image%202026-07-08%20at%209.27.55%20AM.jpeg" alt="Volteo amarillo fabricado en BR Carrocerías" loading="lazy"></div>
+          <div class="body">
+            <h3>Volteos</h3>
+            <p>Cajas de volteo para materiales de construcción y carga a granel.</p>
+          </div>
+        </article>
+        <article class="card reveal">
+          <div class="media"><img src="imagenes/WI3.jpeg" alt="Redilas ganaderas rojas" loading="lazy"></div>
+          <div class="body">
+            <h3>Redilas y estacas</h3>
+            <p>Redilas para ganado y carga general, a la medida de tu camión.</p>
+          </div>
+        </article>
+        <article class="card reveal">
+          <div class="media"><img src="imagenes/WhatsApp%20Image%202026-07-08%20at%209.27.55%20AM%20%285%29.jpeg" alt="Caja cerrada blanca sobre camión" loading="lazy"></div>
+          <div class="body">
+            <h3>Cajas secas</h3>
+            <p>Cajas cerradas para transporte y reparto, ajustadas a tu chasis.</p>
+          </div>
+        </article>
+        <article class="card reveal">
+          <div class="media"><img src="imagenes/WhatsApp%20Image%202026-07-08%20at%209.27.55%20AM%20%283%29.jpeg" alt="Pipa o tanque metálico con escalera" loading="lazy"></div>
+          <div class="body">
+            <h3>Pipas y tanques</h3>
+            <p>Tanques y pipas para transporte de líquidos.</p>
+          </div>
+        </article>
+        <article class="card reveal">
+          <div class="media"><img src="imagenes/WI4.jpeg" alt="Remolque con plataforma y barandales" loading="lazy"></div>
+          <div class="body">
+            <h3>Remolques y plataformas</h3>
+            <p>Remolques, plataformas y camas bajas para carga y maquinaria.</p>
+          </div>
+        </article>
+        <article class="card reveal">
+          <div class="media"><img src="imagenes/WhatsApp%20Image%202026-07-08%20at%209.27.56%20AM.jpeg" alt="Carrocería roja terminada con pintura" loading="lazy"></div>
+          <div class="body">
+            <h3>Reparación y pintura</h3>
+            <p>Reparación de carrocerías dañadas y acabados profesionales y duraderos.</p>
+          </div>
+        </article>
       </div>
-    </form>
+    </div>
   </section>
 
-  <!-- FOOTER -->
-<footer class="footer">
-  <h2>
-    BR Carrocerías 
-    <img src="imagenes/logo.png" alt="Logo BR Carrocerías" style="height:60px; vertical-align:middle; margin-left:10px;">
-  </h2>
-    <p>Fabricación y reparación de todo tipo de carrocerías en general</p>
-    <p>📍 Carretera federal México-Cuautla kilómetro 79<br>
-       Nepantla de Sor Juana Inés, Estado de México</p>
-    <p>✉️ Correo electrónico: 
-       <a href="mailto:brcarrocerias@gmail.com">brcarrocerias@gmail.com</a>
-    </p>
-    <p>📞 Celular: 
-       <a href="tel:5649335426">5649335426</a>
-    </p>
-    <p>© 2026 Carrocerías Norman Badillo</p>
-
-    <div id="social-icons">
-      <a href="https://facebook.com" target="_blank"><i class="fab fa-facebook-f"></i></a>
-      <a href="https://instagram.com" target="_blank"><i class="fab fa-instagram"></i></a>
-      <a href="https://youtube.com" target="_blank"><i class="fab fa-youtube"></i></a>
+  <!-- PROCESO -->
+  <section id="proceso" class="process">
+    <div class="container">
+      <p class="eyebrow">Cómo trabajamos</p>
+      <h2 class="section-title">Cotizar es fácil</h2>
+      <p class="section-intro">Sin filas ni vueltas. Empiezas desde tu celular.</p>
+      <ol class="steps">
+        <li class="reveal"><h3>Envía fotos</h3><p>Mándanos por WhatsApp las medidas o una foto de lo que necesitas fabricar o reparar, con el modelo de tu unidad.</p></li>
+        <li class="reveal"><h3>Recibe tu cotización</h3><p>Revisamos tu caso y te damos un presupuesto claro.</p></li>
+        <li class="reveal"><h3>Agenda y entrega</h3><p>Acuerdas la fecha, fabricamos o reparamos tu carrocería y te avisamos cuando esté lista.</p></li>
+      </ol>
+      <div class="cta"><a class="btn btn-wa wa-link" href="#">Empezar mi cotización</a></div>
     </div>
-  </footer>
+  </section>
 
-  <!-- BOTÓN DE COTIZACIÓN -->
-  <a href="#contacto" class="btn-cotizacion">
-    <img src="imagenes/cotizacion.png" alt="Cotización" width="50">
-  </a>
+  <!-- TRABAJOS -->
+  <section id="trabajos">
+    <div class="container">
+      <p class="eyebrow">Portafolio</p>
+      <h2 class="section-title">Trabajos realizados</h2>
+      <p class="section-intro">Toca una foto para verla en grande.</p>
+      <div class="gallery">
+        <button type="button" data-full="imagenes/WI6.jpeg"><img src="imagenes/WI6.jpeg" alt="Caja naranja de carga sobre camión" loading="lazy"></button>
+        <button type="button" data-full="imagenes/WI5.jpeg"><img src="imagenes/WI5.jpeg" alt="Remolque con barandales verdes" loading="lazy"></button>
+        <button type="button" data-full="imagenes/WhatsApp%20Image%202026-07-08%20at%209.27.51%20AM%20%285%29.jpeg"><img src="imagenes/WhatsApp%20Image%202026-07-08%20at%209.27.51%20AM%20%285%29.jpeg" alt="Camioneta roja con caja de volteo levantada" loading="lazy"></button>
+        <button type="button" data-full="imagenes/WhatsApp%20Image%202026-07-08%20at%209.27.53%20AM%20%282%29.jpeg"><img src="imagenes/WhatsApp%20Image%202026-07-08%20at%209.27.53%20AM%20%282%29.jpeg" alt="Plataforma amarilla cargando maquinaria" loading="lazy"></button>
+        <button type="button" data-full="imagenes/WhatsApp%20Image%202026-07-08%20at%209.27.52%20AM%20%281%29.jpeg"><img src="imagenes/WhatsApp%20Image%202026-07-08%20at%209.27.52%20AM%20%281%29.jpeg" alt="Tanque amarillo en taller" loading="lazy"></button>
+        <button type="button" data-full="imagenes/WhatsApp%20Image%202026-07-08%20at%209.27.56%20AM%20%283%29.jpeg"><img src="imagenes/WhatsApp%20Image%202026-07-08%20at%209.27.56%20AM%20%283%29.jpeg" alt="Caja de volteo gris terminada" loading="lazy"></button>
+        <button type="button" data-full="imagenes/WhatsApp%20Image%202026-07-08%20at%209.27.53%20AM%20%281%29.jpeg"><img src="imagenes/WhatsApp%20Image%202026-07-08%20at%209.27.53%20AM%20%281%29.jpeg" alt="Carrocería roja en el taller" loading="lazy"></button>
+        <button type="button" data-full="imagenes/WhatsApp%20Image%202026-07-08%20at%209.27.52%20AM.jpeg"><img src="imagenes/WhatsApp%20Image%202026-07-08%20at%209.27.52%20AM.jpeg" alt="Camión rojo con volteo" loading="lazy"></button>
+      </div>
+    </div>
+  </section>
 
-  <!-- BOTÓN DE WHATSAPP BUSINESS -->
-  <a href="https://wa.me/5215512345678" class="btn-whatsapp" target="_blank">
-    <img src="imagenes/whatsapp.png" alt="WhatsApp" width="50">
-  </a>
+  <dialog class="lightbox" id="lightbox" aria-label="Foto ampliada">
+    <form method="dialog"><button class="close">Cerrar ✕</button></form>
+    <img id="lightboxImg" alt="Trabajo realizado, ampliado">
+  </dialog>
 
-  <script src="script.js"></script>
+  <!-- TESTIMONIOS -->
+  <!-- IMPORTANTE: reemplaza estos testimonios por reseñas reales de tus clientes (con su permiso) -->
+  <section id="testimonios" class="testimonials">
+    <div class="container">
+      <p class="eyebrow">Testimonios</p>
+      <h2 class="section-title">Lo que dicen nuestros clientes</h2>
+      <div class="cards" style="margin-top:32px">
+        <blockquote class="quote reveal"><div class="stars" aria-label="5 estrellas">★★★★★</div><p>“El servicio fue excelente, mi carro quedó como nuevo.”</p><cite>— Juan Pérez</cite></blockquote>
+        <blockquote class="quote reveal"><div class="stars" aria-label="5 estrellas">★★★★★</div><p>“Muy profesionales y atentos, recomiendo totalmente sus carrocerías.”</p><cite>— María López</cite></blockquote>
+        <blockquote class="quote reveal"><div class="stars" aria-label="5 estrellas">★★★★★</div><p>“La calidad del trabajo es impecable, volveré sin duda.”</p><cite>— Carlos Ramírez</cite></blockquote>
+      </div>
+    </div>
+  </section>
+
+  <!-- CONTACTO -->
+  <section id="contacto">
+    <div class="container">
+      <p class="eyebrow">Contacto</p>
+      <h2 class="section-title">Pide tu cotización</h2>
+      <p class="section-intro">Llena el formulario y se abrirá WhatsApp con tu mensaje listo para enviar.</p>
+
+      <div class="contact-grid">
+        <div class="form-box">
+          <h3>Cuéntanos qué necesitas</h3>
+          <p class="hint">Después de enviar, adjunta fotos o medidas en el chat de WhatsApp.</p>
+          <form id="quoteForm">
+            <label for="nombre">Nombre</label>
+            <input id="nombre" name="nombre" type="text" autocomplete="name" required>
+
+            <label for="vehiculo">Unidad (marca, modelo y año)</label>
+            <input id="vehiculo" name="vehiculo" type="text" placeholder="Ej. Ford F-350 2019" required>
+
+            <label for="servicio">Servicio</label>
+            <select id="servicio" name="servicio">
+              <option>Volteo</option>
+              <option>Redilas / estacas</option>
+              <option>Caja seca</option>
+              <option>Pipa / tanque</option>
+              <option>Remolque / plataforma</option>
+              <option>Reparación o pintura</option>
+              <option>Otro</option>
+            </select>
+
+            <label for="detalle">Detalles</label>
+            <textarea id="detalle" name="detalle" placeholder="Describe lo que necesitas, con medidas si las tienes"></textarea>
+
+            <button class="btn btn-wa" type="submit">Enviar por WhatsApp</button>
+          </form>
+        </div>
+
+        <div class="info">
+          <div class="info-item"><h3>Dirección</h3><p>Carretera federal México-Cuautla km 79<br>Nepantla de Sor Juana Inés, Estado de México</p></div>
+          <div class="info-item"><h3>Celular / WhatsApp</h3><p><a href="tel:+525649335426">56 4933 5426</a></p></div>
+          <div class="info-item"><h3>Correo</h3><p><a href="mailto:brcarrocerias@gmail.com">brcarrocerias@gmail.com</a></p></div>
+          <!-- EDITA: confirma tu horario real antes de publicar -->
+          <div class="info-item"><h3>Horario</h3><p>Lunes a viernes: 9:00 a 18:00<br>Sábado: 9:00 a 14:00</p></div>
+        </div>
+      </div>
+
+      <div class="map">
+        <iframe title="Ubicación de BR Carrocerías en Google Maps" loading="lazy" referrerpolicy="no-referrer-when-downgrade"
+          src="https://www.google.com/maps?q=Carretera+federal+M%C3%A9xico-Cuautla+km+79+Nepantla+de+Sor+Juana+In%C3%A9s&output=embed"></iframe>
+      </div>
+    </div>
+  </section>
+</main>
+
+<footer>
+  <div class="container">
+    <strong>BR Carrocerías</strong>
+    Fabricación y reparación de todo tipo de carrocerías en general<br>
+    Carretera federal México-Cuautla km 79, Nepantla de Sor Juana Inés, Edo. Méx.<br><br>
+    © <span id="year">2026</span> BR Carrocerías. Todos los derechos reservados.
+    <!-- Cuando tengas perfiles propios, agrega aquí los enlaces a tu Facebook e Instagram -->
+  </div>
+</footer>
+
+<a class="wa-float wa-link" href="#" aria-label="Escribir por WhatsApp">
+  <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M20.5 3.5A11.9 11.9 0 0 0 12 0C5.4 0 .1 5.3.1 11.9c0 2.1.6 4.1 1.6 5.9L0 24l6.4-1.7a11.9 11.9 0 0 0 5.6 1.4c6.6 0 11.9-5.3 11.9-11.9 0-3.2-1.2-6.200-3.400-8.300zM12 21.700a9.900 9.900 0 0 1-5-1.400l-.4-.2-3.800 1 1-3.700-.2-.4a9.800 9.800 0 0 1-1.500-5.200C2.100 6.500 6.500 2.100 12 2.100c2.600 0 5.100 1 6.900 2.900a9.700 9.700 0 0 1 2.900 6.900c0 5.400-4.400 9.800-9.800 9.800zm5.400-7.300c-.3-.1-1.700-.8-2-.9-.3-.1-.5-.1-.7.100l-.9 1.100c-.2.200-.3.200-.6.100a8 8 0 0 1-4-3.500c-.3-.5.3-.5.900-1.600.1-.2.100-.4 0-.5l-.9-2.100c-.2-.5-.5-.5-.7-.5h-.6c-.2 0-.5.100-.8.400-.3.300-1 1-1 2.500s1.100 2.900 1.200 3.100c.1.200 2.100 3.200 5.100 4.500 1.900.8 2.600.9 3.500.7.600-.1 1.700-.7 2-1.400.2-.7.200-1.300.2-1.400-.1-.1-.3-.2-.6-.3z"/></svg>
+</a>
+
+<script>
+  // Número de WhatsApp en formato internacional (52 + 10 dígitos). Cámbialo aquí y se actualiza en toda la página.
+  const WA_NUMBER = "525649335426";
+  const waUrl = (text) => `https://wa.me/${WA_NUMBER}?text=${encodeURIComponent(text)}`;
+
+  // Todos los botones de WhatsApp
+  document.querySelectorAll('.wa-link').forEach(a => {
+    a.href = waUrl("Hola, me gustaría cotizar una carrocería.");
+    a.target = "_blank";
+    a.rel = "noopener";
+  });
+
+  // Formulario -> mensaje de WhatsApp
+  document.getElementById('quoteForm').addEventListener('submit', (e) => {
+    e.preventDefault();
+    const f = new FormData(e.target);
+    const msg =
+      `Hola, soy ${f.get('nombre')}.\n` +
+      `Unidad: ${f.get('vehiculo')}\n` +
+      `Servicio: ${f.get('servicio')}\n` +
+      `Detalles: ${f.get('detalle') || 'Sin detalles'}\n\n` +
+      `Les enviaré fotos por este medio. ¡Gracias!`;
+    window.open(waUrl(msg), '_blank', 'noopener');
+  });
+
+  // Menú móvil
+  const toggle = document.getElementById('menuToggle');
+  const menu = document.getElementById('menu');
+  toggle.addEventListener('click', () => {
+    const open = menu.classList.toggle('open');
+    toggle.setAttribute('aria-expanded', open);
+  });
+  menu.querySelectorAll('a').forEach(a => a.addEventListener('click', () => {
+    menu.classList.remove('open');
+    toggle.setAttribute('aria-expanded', 'false');
+  }));
+
+  // Galería ampliada
+  const lightbox = document.getElementById('lightbox');
+  const lightboxImg = document.getElementById('lightboxImg');
+  document.querySelectorAll('.gallery button').forEach(btn => {
+    btn.addEventListener('click', () => {
+      lightboxImg.src = btn.dataset.full;
+      lightbox.showModal();
+    });
+  });
+  lightbox.addEventListener('click', (e) => { if (e.target === lightbox) lightbox.close(); });
+
+  // Aparición suave al hacer scroll
+  const io = new IntersectionObserver((entries) => {
+    entries.forEach(en => { if (en.isIntersecting) { en.target.classList.add('visible'); io.unobserve(en.target); } });
+  }, { threshold: .15 });
+  document.querySelectorAll('.reveal').forEach(el => io.observe(el));
+
+  document.getElementById('year').textContent = new Date().getFullYear();
+</script>
 </body>
 </html>
